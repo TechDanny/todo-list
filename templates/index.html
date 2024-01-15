@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="https://kit.fontawesome.com/065d7448de.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+<body>
+    <div>
+    <h2>Hello world!</h2>
+    <table class="table table-striped table-hover">
+    <ul>
+        {% for todo in todos %}
+        <li class="list">
+            <input type="checkbox" name="done" {% if todo['done'] %} checked {% endif %} disabled onchange="this.form.submit()">
+            <span {% if todo['done'] %} style="text-decoration: line-through"  {% endif %}>{{ todo['task'] }}</span>
+            <a href="{{ url_for('check', index=loop.index0) }}" class="btn btn-primary">check</a>
+            <a href="{{ url_for('edit', index=loop.index0) }}" class="btn btn-secondary">Edit</a>
+            <a href="{{ url_for('delete', index=loop.index0) }}" class="btn btn-danger">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+    </table>
+    <form action="{{ url_for('add') }}" method="post" class="formm">
+        <input type="text" name="todo">
+        <button type="submit" class="btn btn-success">Add Todo</button>
+    </form>
+    </div>
+    <footer id="footer">
+        <a href="https://twitter.com/_musauu" target="_blank">
+          <i class="social-icon fa-brands fa-x-twitter fa-xl"></i></a>
+    
+        <a href="https://techdanny.hashnode.dev/" target="_blank">
+          <i class="social-icon fa-brands fa-hashnode fa-lg"></i></a>
+    
+        <a href="mailto:kokidanny15@gmail.com">
+          <i class="social-icon fa-solid fa-envelope fa-xl"></i></a>
+    
+        <a href="https://github.com/TechDanny" target="_blank">
+          <i class="social-icon fa-brands fa-github fa-xl"></i></a>
+    
+        <p class="copyright" id="currentYear">©2024 Copyright TechDanny</p>
+    
+      </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+</body>
+</html>
