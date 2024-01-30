@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: arial, sans-serif;
+    color: #fff;
+    
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background: #081b29;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+::-webkit-input-placeholder{
+    color: #eee;
+}
+
+.wrapper {
+    border-radius: 25px;
+    margin-top: 90px;
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    height: 400px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: 3px solid #00ffff;
+    box-shadow: 0 0 50px 0 #00a6bc;
+    align-items: flex-start;
+}
+
+@media screen and (min-width: 600px) {
+    .wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 20px;
+}
+
+.login{
+    font-size: 35px;
+}
+
+.fill{
+    padding: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+.input {
+    border: none;
+    outline: none;
+    background: none;
+    width: 100%;
+    margin-top: 20px;
+    padding-right: 10px;
+    font-size: 17px;
+    color: #0ef;
+}
+
+.submit {
+    border: none;
+    outline: none;
+    width: 288px;
+    margin-top: 25px;
+    padding: 10px 0;
+    font-size: 20px;
+    border-radius: 40px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    background: linear-gradient(45deg, #0ef, #c800ff);
+}
+
+.footer {
+    margin-top: 20px;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+}
+
+.link {
+    color: #0ef;
+    text-decoration: none;
+}
+
+.banner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 450px;
+    height: 100%;
+    background: linear-gradient(to right, #0ef, #c800ff);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 60% 100%);
+    padding-right: 70px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    flex: 1;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+@media screen and (min-width: 600px) {
+    .form {
+        flex: 1;
+        order: 2;
+    }
+
+    .banner {
+        flex: 1;
+        order: 1;
+        text-align: right;
+    }
+}
+
+.text {
+    font-size: 40px;
+    margin-top: -50px;
+    line-height: 50px;
+}
+
+.paragraph {
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 1px;
+}

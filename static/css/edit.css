@@ -1,0 +1,21 @@
+#footer {
+    padding: 1% 5%;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    background-color: #072541;
+    width: 100%;
+    position: fixed;
+ }
+ 
+ .social-icon {
+    margin: 20px 10px;
+    color: #7743DB;
+ }
+ 
+ .social-icon:hover {
+    color: #FFBA86;
+ }
+ .copyright {
+    color: #ffff
+ }
